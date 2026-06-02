@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Interaktif - Burnout & Risiko Kegagalan Founder Startup</title>
+  <meta name="description" content="Dashboard interaktif D3.js untuk analisis tingkat kejenuhan (burnout) founder startup dan risiko kegagalan bisnis.">
+  <link rel="stylesheet" href="css/style.css?v=5.1">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- Sidebar Kiri -->
+    <aside class="sidebar" aria-label="Panel Kontrol">
+      <div class="sidebar-header">
+        <h1>FOUNDER HEALTH</h1>
+        <p>Analisis Interaktif Burnout & Risiko Kegagalan Startup</p>
+      </div>
+
+      <!-- Filter Panel -->
+      <div class="filter-panel">
+        <h2 class="filter-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          Filter Global
+        </h2>
+        
+        <div class="filter-group">
+          <label for="filter-work-mode">Mode Kerja</label>
+          <select id="filter-work-mode" class="filter-select">
+            <option value="All">Semua Mode Kerja</option>
+            <option value="Remote">Remote (Kerja Jarak Jauh)</option>
+            <option value="Hybrid">Hybrid (Campuran)</option>
+            <option value="Office">Office (Bekerja di Kantor)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-economic-climate">Iklim Ekonomi</label>
+          <select id="filter-economic-climate" class="filter-select">
+            <option value="All">Semua Iklim Ekonomi</option>
+            <option value="Bull Market">Pasar Bergairah (Bull Market)</option>
+            <option value="Stable Economy">Ekonomi Stabil</option>
+            <option value="Recession">Resesi (Recession)</option>
+            <option value="Funding Winter">Musim Kering Pendanaan</option>
+          </select>
+        </div>
+        
+        <button id="btn-reset-filters" class="btn-secondary">Reset Semua Filter</button>
+      </div>
+
+      <!-- Panduan Interaksi -->
+      <div class="info-panel">
+        <h3 class="info-title">Petunjuk Interaksi</h3>
+        <ul class="info-list">
+          <li><strong>Bandingkan Founder:</strong> Klik nama tipe founder pada legenda di sebelah kanan Radar Chart untuk menyalakan/mematikan visualnya.</li>
+          <li><strong>Sorot Data:</strong> Arahkan kursor (hover) pada titik scatter plot, batang grafis, atau sel heatmap untuk melihat detail angka riil.</li>
+        </ul>
+      </div>
+
+      <!-- Referensi D3.js -->
+      <div class="sidebar-footer">
+      </div>
+    </aside>
+
+    <!-- Konten Utama -->
+    <main class="main-content">
+
+      <!-- Header Utama -->
+      <header class="top-header-card">
+        <div class="header-glow"></div>
+        <div class="header-flex-container">
+          
+          <!-- Informasi Judul -->
+          <div class="header-left-info">
+            <div class="header-tag-badge">
+              <span class="pulse-tag"></span>
+              Kelompok 1 • UAS VISDAT 2026
+            </div>
+            <h2>SISTEM ANALISIS KESEHATAN MENTAL & RISIKO KEGAGALAN FOUNDER STARTUP</h2>
+          </div>
+          
+          <!-- Indikator KPI Utama -->
+          <div class="kpi-pills-row" aria-label="Metrik Utama">
+            
+            <div class="kpi-pill blue">
+              <span class="pill-label">Total Data:</span>
+              <span class="pill-value" id="val-total">50.000</span>
+            </div>
+            
+            <div class="kpi-pill purple">
+              <span class="pill-label">Rerata Burnout:</span>
+              <span class="pill-value" id="val-burnout">3.44</span>
+            </div>
+            
+            <div class="kpi-pill coral">
+              <span class="pill-label">Burnout Parah:</span>
+              <span class="pill-value" id="val-critical">10.8%</span>
+            </div>
+            
+            <div class="kpi-pill teal">
+              <span class="pill-label">Risiko Gagal:</span>
+              <span class="pill-value" id="val-failure">23.7%</span>
+            </div>
+            
+            <div class="kpi-pill gold">
+              <span class="pill-label">Rerata Tidur:</span>
+              <span class="pill-value" id="val-sleep">6.8 j</span>
+            </div>
+            
+            <div class="kpi-pill support-pill">
+              <span class="pill-label">Dukungan Mental:</span>
+              <span class="pill-value text-glow" id="val-support-pct">35.4%</span>
+            </div>
+            
+          </div>
+          
+        </div>
+      </header>
+
+      <!-- Grid Visualisasi -->
+      <div class="dashboard-grid">
+
+        <!-- Baris 1: Radar & Donut -->
+        <section class="chart-card col-6" id="card-radar">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">1. Perbandingan Tingkat Stres & Kesejahteraan per Tipe Founder</h3>
+              <span class="chart-subtitle">Diagram radar yang memetakan skor stres, tidur, burnout, dan kelelahan keputusan secara multi-dimensi. Klik legenda di bawah untuk membandingkan.</span>
+            </div>
+          </div>
+          <div class="chart-body" id="radar-founder-chart"></div>
+          <div class="chart-insight" id="insight-radar">
+            <strong>Analisis Profil:</strong> Memuat insight...
+          </div>
+        </section>
+
+        <section class="chart-card col-6" id="card-donut">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">2. Efektivitas Dukungan Kesehatan Mental Terhadap Pencegahan Burnout</h3>
+              <span class="chart-subtitle">Perbandingan sebaran tingkat burnout antara kelompok founder yang berkonsultasi dengan ahli mental (KONSUL) vs mengelola secara mandiri (MANDIRI).</span>
+            </div>
+          </div>
+          <div class="chart-body donut-body" id="donut-mental-chart"></div>
+          <div class="chart-insight" id="insight-donut">
+            <strong>Analisis Dukungan Mental:</strong> Memuat insight...
+          </div>
+        </section>
+
+        <!-- Baris 2: Grouped Bar Chart -->
+        <section class="chart-card col-12" id="card-bar">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">3. Distribusi Kerentanan Startup: Risiko Kegagalan Tinggi Per Sektor & Iklim Ekonomi</h3>
+              <span class="chart-subtitle">Visualisasi persentase perusahaan berisiko gugur (Shutdown Risk Tinggi) di 10 sektor industri utama ketika dihadapkan pada 4 skenario siklus makroekonomi.</span>
+            </div>
+          </div>
+          <div class="chart-body" id="industry-climate-chart"></div>
+          <div class="chart-insight" id="insight-bar">
+            <strong>Analisis Sektoral:</strong> Memuat insight...
+          </div>
+        </section>
+
+        <!-- Baris 3: Scatter & Heatmap -->
+        <section class="chart-card col-6" id="card-scatter">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">4. Korelasi Linier: Hubungan Jam Kerja Mingguan vs Skor Burnout</h3>
+              <span class="chart-subtitle">Sebaran data (sampel 800 founder) beserta tren regresi linier. Kategori burnout founder: Rendah (skor 0-4), Sedang (skor 4-7), dan Tinggi (skor 7-10).</span>
+            </div>
+          </div>
+          <div class="chart-body" id="workhours-burnout-chart"></div>
+          <div class="chart-insight" id="insight-scatter">
+            <strong>Analisis Korelasi Kerja:</strong> Memuat insight...
+          </div>
+        </section>
+
+        <section class="chart-card col-6" id="card-heatmap">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">5. Analisis Hubungan: Matriks Korelasi Faktor Pemicu Burnout (Pearson)</h3>
+              <span class="chart-subtitle">Kekuatan hubungan linier antar metrik kesehatan (0.0: netral/tidak berhubungan, +1.0: korelasi positif sempurna, -1.0: korelasi negatif sempurna).</span>
+            </div>
+          </div>
+          <div class="chart-body heatmap-body" id="correlation-heatmap"></div>
+          <div class="chart-insight" id="insight-heatmap">
+            <strong>Analisis Matriks:</strong> Memuat insight...
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Footer -->
+      <footer>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Tooltip Global -->
+  <div class="d3-tooltip" id="tooltip" style="opacity:0;"></div>
+
+  <!-- D3.js Core Library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
