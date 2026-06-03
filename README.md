@@ -198,75 +198,60 @@ Perhitungan dilakukan ulang secara otomatis setiap kali filter dashboard berubah
 
 ---
 
+## 🔍 Analisis Data Hasil Visualisasi
+
+Analisis data berikut didasarkan pada visualisasi yang disajikan dalam dashboard interaktif, menggunakan data dari 50.000 founder startup yang telah diproses.
+
+### 1. Analisis Deskriptif Umum
+Dari keseluruhan dataset yang dianalisis, rata-rata skor burnout founder berada pada angka **3,44 dari skala 10**, menunjukkan bahwa mayoritas founder berada pada tingkat kejenuhan rendah hingga sedang. Namun, terdapat **5.210 founder (10,4%)** yang berada dalam kategori burnout kritis (skor di atas 6,5). Di sisi bisnis, sebanyak **11.867 startup (23,7%)** tercatat mengalami kegagalan (shutdown). Dari aspek kesehatan fisik, rata-rata jam tidur founder hanya mencapai **5,69 jam per hari**, yang berada di bawah standar kesehatan umum. Hanya **27,3%** founder yang secara aktif mencari dukungan kesehatan mental.
+
+### 2. Analisis Profil Kesehatan Mental Berdasarkan Tipe Founder (Visualisasi 1)
+Analisis radar chart terhadap profil delapan tipe founder menunjukkan pola kerentanan yang berbeda:
+- **Burned-Out Operator** memiliki skor burnout rata-rata tertinggi (**5,00**), dengan rata-rata skor stres mencapai 5,54 dan tekanan investor sebesar 6,20. Poligon radar untuk tipe ini memiliki luas area terbesar, menunjukkan akumulasi tekanan di seluruh dimensi kesehatan mental.
+- **Calm Operator** merupakan tipe yang paling resilien dengan skor burnout rata-rata terendah (**1,38**) dan skor keseimbangan hidup tertinggi (**9,33**). Meskipun memiliki tekanan investor yang tetap tinggi (6,22), mereka mampu meminimalkan skor stres (2,61) dan konflik co-founder (1,83).
+- **Solo Hustler** dan **Growth Obsessed Founder** menempati posisi risiko tertinggi kedua dan ketiga dengan skor rata-rata masing-masing **4,38** dan **4,35**, yang menunjukkan tingginya kerentanan psikologis pada pendiri tunggal atau pendiri yang fokus pada pertumbuhan eksponensial.
+
+### 3. Analisis Efektivitas Dukungan Kesehatan Mental (Visualisasi 2)
+Perbandingan proporsi burnout berdasarkan pencarian dukungan kesehatan mental menunjukkan temuan berikut:
+- Founder yang **mencari bantuan kesehatan mental** memiliki proporsi burnout tingkat tinggi (High) sebesar **18,9%**, jauh lebih tinggi dibandingkan kelompok yang tidak mencari bantuan (**7,7%**).
+- Pada kelompok yang **tidak mencari bantuan**, proporsi burnout tingkat rendah (Low) mendominasi sebesar **60,0%**, sedangkan pada kelompok yang mencari bantuan hanya **44,7%**.
+- Perbedaan distribusi ini mengindikasikan adanya efek *selection bias* (bias seleksi), di mana founder yang kondisi burnout-nya sudah parah memiliki kecenderungan lebih tinggi untuk mencari bantuan medis/psikologis.
+
+### 4. Analisis Risiko Kegagalan Startup per Industri dan Pendanaan (Visualisasi 3)
+Analisis grouped bar chart mengungkapkan variasi risiko shutdown berdasarkan industri dan pengaruh pendanaan:
+- Industri **ClimateTech** mencatat rata-rata probabilitas shutdown tertinggi (**0,396**), disusul oleh industri SaaS (**0,391**) dan Cybersecurity (**0,391**).
+- Industri **AI** memiliki rata-rata probabilitas shutdown terendah (**0,377**).
+- Pola hubungan tingkat pendanaan (funding level) terhadap risiko kegagalan terlihat konsisten di seluruh industri. Sebagai contoh, pada industri ClimateTech: pendanaan rendah (*Low*) memiliki risiko kegagalan **0,413**, pendanaan sedang (*Medium*) sebesar **0,399**, dan pendanaan tinggi (*High*) menurun menjadi **0,349**. Ini membuktikan secara empiris bahwa ketersediaan modal yang memadai menurunkan tingkat risiko kegagalan usaha.
+
+### 5. Analisis Hubungan Jam Kerja dan Skor Burnout (Visualisasi 4)
+Hasil sebaran scatter plot mengonfirmasi adanya hubungan linier yang kuat antara beban kerja dan kejenuhan founder:
+- Koefisien korelasi Pearson antara variabel jam kerja mingguan (`weekly_work_hours`) dan skor burnout (`burnout_score`) bernilai **r = 0,577**, yang menunjukkan **korelasi positif kuat**.
+- Rata-rata jam kerja mingguan founder bernilai **63,70 jam**, sangat jauh di atas batas standar kerja normal (40 jam per minggu).
+- Sebanyak **30.502 founder (61,0%)** bekerja secara ekstrem dengan durasi 60 jam atau lebih per minggu. Dari kelompok pekerja ekstrem tersebut, **16,3%** di antaranya mengalami tingkat burnout tinggi (High).
+
+### 6. Analisis Korelasi Hubungan Antar Variabel (Visualisasi 5)
+Matriks korelasi 8×8 pada heatmap memperlihatkan hubungan linear antar variabel numerik sebagai berikut:
+- **Korelasi Negatif Terkuat**: Terjadi antara Keseimbangan Hidup (`work_life_balance`) dan Skor Burnout (`burnout_score`) sebesar **r = −0,923**. Hal ini menunjukkan bahwa penurunan kualitas keseimbangan hidup berbanding lurus dengan peningkatan risiko burnout secara hampir sempurna.
+- **Korelasi Positif Terkuat**: Terjadi antara Kelelahan Keputusan (`decision_fatigue`) dan Skor Burnout (`burnout_score`) sebesar **r = 0,823**, memosisikan beban mental dalam pengambilan keputusan sebagai pemicu utama kejenuhan founder.
+- **Skor Stres (`stress_score`)**: Bertindak sebagai variabel penghubung utama, dengan korelasi positif kuat terhadap kelelahan keputusan (r = 0,761), jam kerja mingguan (r = 0,742), skor burnout (r = 0,735), dan korelasi negatif kuat terhadap keseimbangan hidup (r = −0,751).
+
+---
+
 ## 💡 Insight yang Diperoleh
 
-Berdasarkan hasil eksplorasi dan visualisasi terhadap 50.000 data founder startup, diperoleh sejumlah temuan penting sebagai berikut.
+Dari hasil analisis data di atas, dapat ditarik beberapa insight strategis mengenai fenomena burnout dan kegagalan pada startup:
 
-### Gambaran Umum Kondisi Founder
-
-Dari keseluruhan dataset, rata-rata skor burnout founder berada pada angka **3,44 dari skala 10**, yang mengindikasikan bahwa mayoritas founder berada pada tingkat kejenuhan rendah hingga sedang. Namun demikian, terdapat **5.210 founder (10,4%)** yang tergolong dalam kategori burnout kritis (skor di atas 6,5). Di sisi lain, sebanyak **11.867 startup (23,7%)** tercatat mengalami kegagalan, dan rata-rata jam tidur founder hanya **5,69 jam per hari** — di bawah rekomendasi kesehatan umum. Hanya **27,3%** founder yang secara aktif mencari dukungan kesehatan mental.
-
-### Insight dari Visualisasi 1 — Profil Tipe Founder
-
-Analisis radar chart menunjukkan adanya perbedaan signifikan antar tipe kepribadian founder:
-
-- **Burned-Out Operator** memiliki skor burnout rata-rata tertinggi (**5,00**) dengan tekanan keputusan (decision fatigue) yang tinggi sebesar 5,54 dan tekanan investor sebesar 6,20. Profil poligon tipe ini paling lebar, menandakan akumulasi tekanan dari berbagai dimensi secara bersamaan.
-- **Calm Operator** menunjukkan skor burnout terendah (**1,38**) dengan keseimbangan hidup terbaik sebesar 9,33. Menariknya, tekanan investor pada tipe ini tetap tinggi (6,22), namun diimbangi oleh skor stres yang sangat rendah (2,61) dan konflik co-founder minimal (1,83).
-- **Solo Hustler** dan **Growth Obsessed Founder** berada di posisi kedua dan ketiga tertinggi (4,38 dan 4,35), mengindikasikan bahwa founder yang bekerja sendiri atau terobsesi pertumbuhan memiliki risiko burnout yang cukup tinggi.
-
-Temuan ini menunjukkan bahwa **tipe kepribadian founder berperan besar dalam kerentanan terhadap burnout**, dan intervensi kesehatan mental perlu disesuaikan berdasarkan karakteristik kepribadian.
-
-### Insight dari Visualisasi 2 — Efektivitas Dukungan Kesehatan Mental
-
-Perbandingan distribusi burnout level menghasilkan temuan yang perlu dicermati secara hati-hati:
-
-- Founder yang **mencari bantuan kesehatan mental** justru memiliki proporsi burnout tinggi (High) sebesar **18,9%**, lebih besar dibandingkan kelompok yang tidak mencari bantuan (**7,7%**).
-- Pada kelompok yang tidak mencari bantuan, proporsi burnout rendah (Low) mencapai **60,0%**, sementara pada kelompok yang mencari bantuan hanya **44,7%**.
-
-Interpretasi temuan ini memerlukan kehati-hatian karena adanya potensi **selection bias** — founder yang mencari bantuan kesehatan mental kemungkinan besar sudah mengalami tekanan yang lebih berat sejak awal. Dengan kata lain, bukan bantuan mental yang menyebabkan burnout tinggi, melainkan founder yang sudah burnout lebih cenderung mencari bantuan. Temuan ini tetap penting karena menunjukkan bahwa **kelompok yang mencari bantuan mental adalah kelompok yang paling membutuhkan perhatian dan pendampingan lebih lanjut**.
-
-### Insight dari Visualisasi 3 — Risiko Kegagalan per Industri
-
-Analisis grouped bar chart menunjukkan variasi risiko kegagalan antar sektor industri:
-
-- **ClimateTech** memiliki rata-rata probabilitas shutdown tertinggi sebesar **0,396**, diikuti oleh SaaS (0,391) dan Cybersecurity (0,391). Tingginya risiko pada ClimateTech dapat dikaitkan dengan besarnya kebutuhan modal, panjangnya siklus pengembangan produk, dan ketidakpastian regulasi di sektor energi terbarukan.
-- **AI** memiliki rata-rata risiko terendah sebesar **0,377**, kemungkinan karena tingginya permintaan pasar dan ketersediaan pendanaan di sektor kecerdasan buatan.
-- Pada industri ClimateTech, terdapat pola yang konsisten: startup dengan pendanaan **Low** memiliki risiko shutdown tertinggi (0,413), disusul **Medium** (0,399), dan **High** (0,349). Pola ini mengkonfirmasi bahwa **tingkat pendanaan yang lebih tinggi berkorelasi dengan risiko kegagalan yang lebih rendah**.
-
-Meskipun demikian, perbedaan antar industri relatif kecil (rentang 0,377–0,396), yang mengindikasikan bahwa risiko kegagalan startup bersifat multifaktorial dan tidak didominasi oleh sektor industri semata.
-
-### Insight dari Visualisasi 4 — Hubungan Jam Kerja dan Burnout
-
-Scatter plot mengungkapkan hubungan yang signifikan antara intensitas kerja dan burnout:
-
-- Koefisien Korelasi Pearson antara jam kerja mingguan dan skor burnout adalah **r = 0,577**, yang termasuk kategori **korelasi positif kuat**. Artinya, semakin tinggi jam kerja mingguan, semakin tinggi pula kecenderungan skor burnout founder.
-- Rata-rata jam kerja founder adalah **63,70 jam per minggu** — jauh melampaui standar kerja 40 jam/minggu.
-- Dari total 50.000 founder, sebanyak **30.502 (61,0%)** bekerja 60 jam atau lebih per minggu. Dari kelompok ini, **16,3%** mengalami burnout tinggi (High).
-- Garis referensi pada scatter plot membagi area menjadi empat kuadran, di mana kuadran kanan atas (jam kerja tinggi + burnout tinggi) menunjukkan konsentrasi titik-titik berwarna merah yang lebih padat.
-
-Temuan ini memberikan bukti kuat bahwa **jam kerja yang berlebihan (overwork) merupakan salah satu prediktor utama burnout** pada founder startup.
-
-### Insight dari Visualisasi 5 — Matriks Korelasi Antar Variabel
-
-Heatmap korelasi mengungkapkan pola hubungan yang kompleks antar variabel:
-
-- Korelasi negatif terkuat ditemukan antara **Keseimbangan Hidup (Work-Life Balance) dan Skor Burnout** dengan nilai **r = −0,923**. Ini merupakan korelasi negatif sangat kuat, yang berarti semakin buruk keseimbangan hidup seorang founder, semakin tinggi tingkat burnoutnya.
-- Korelasi positif terkuat terjadi antara **Kelelahan Keputusan (Decision Fatigue) dan Skor Burnout** sebesar **r = 0,823**, menunjukkan bahwa akumulasi beban pengambilan keputusan merupakan faktor pemicu burnout yang sangat dominan.
-- **Skor Stres** berkorelasi kuat dengan hampir semua variabel lainnya: positif kuat dengan Kelelahan Keputusan (r = 0,761), Burnout (r = 0,735), Jam Kerja (r = 0,742), dan negatif kuat dengan Keseimbangan Hidup (r = −0,751). Ini mengkonfirmasi posisi stres sebagai variabel sentral dalam ekosistem burnout.
-- **Jam Kerja Mingguan** berkorelasi positif kuat dengan Skor Stres (r = 0,742) dan negatif sedang dengan Keseimbangan Hidup (r = −0,670), membentuk rantai kausal: *overwork → stres tinggi → keseimbangan hidup menurun → burnout meningkat*.
-- **Jam Tidur** berkorelasi positif sedang dengan Keseimbangan Hidup (r = 0,649), mengindikasikan bahwa kualitas istirahat turut berkontribusi terhadap keseimbangan hidup founder.
-- **Tekanan Investor** dan **Konflik Co-founder** memiliki korelasi rendah terhadap sebagian besar variabel, menunjukkan bahwa kedua faktor ini bersifat lebih independen dan tidak selalu berjalan beriringan dengan stres kerja atau burnout.
-
-### Kesimpulan Insight
-
-Berdasarkan seluruh temuan di atas, dapat disimpulkan bahwa:
-
-1. **Burnout pada founder startup merupakan fenomena multifaktorial** yang dipengaruhi oleh tipe kepribadian, intensitas kerja, dan faktor-faktor psikososial secara bersamaan.
-2. **Jam kerja berlebihan (overwork) merupakan prediktor kuat burnout**, dengan korelasi r = 0,577. Founder yang bekerja ≥60 jam/minggu memiliki risiko burnout tinggi sebesar 16,3%.
-3. **Keseimbangan hidup (work-life balance) adalah variabel protektif paling signifikan** terhadap burnout (r = −0,923). Program intervensi sebaiknya difokuskan pada peningkatan keseimbangan hidup.
-4. **Tipe kepribadian menentukan kerentanan** — Burned-Out Operator paling berisiko, sedangkan Calm Operator paling resilien.
-5. **Tingkat pendanaan yang lebih tinggi menurunkan risiko kegagalan startup**, meskipun variasi antar industri relatif kecil.
-6. **Rantai kausal burnout** yang teridentifikasi adalah: *overwork → stres → kelelahan keputusan → penurunan keseimbangan hidup → burnout*.
+1. **Rantai Kausalitas Burnout**:
+   Visualisasi data mengungkap rantai hubungan sebab-akibat yang jelas:
+   $$\text{Jam Kerja Ekstrem } (\ge 60 \text{ jam/minggu}) \rightarrow \text{Peningkatan Skor Stres} \rightarrow \text{Kelelahan Keputusan} \rightarrow \text{Kerusakan Keseimbangan Hidup} \rightarrow \text{Burnout Tinggi}$$
+2. **Keseimbangan Hidup sebagai Faktor Protektif**:
+   Dengan korelasi negatif $r = -0,923$ terhadap burnout, perbaikan kualitas keseimbangan hidup (seperti jam tidur yang cukup dan pembatasan jam kerja) merupakan langkah preventif paling efektif untuk mereduksi tingkat burnout founder.
+3. **Kerentanan Berbasis Profil Kepribadian**:
+   Tipe founder seperti *Burned-Out Operator* dan *Solo Hustler* memerlukan intervensi kesehatan mental lebih dini karena memiliki kecenderungan menanggung akumulasi stres yang lebih besar dibandingkan tipe *Calm Operator*.
+4. **Peran Pendanaan Terhadap Keberlangsungan Usaha**:
+   Meskipun tidak secara langsung mengurangi stres founder, pendanaan tingkat tinggi (*High Funding*) terbukti secara signifikan menurunkan probabilitas kegagalan startup di seluruh sektor industri.
+5. **Kesenjangan Pencarian Bantuan**:
+   Tingginya proporsi burnout (18,9%) pada founder yang mencari bantuan kesehatan mental mencerminkan bahwa penanganan kesehatan mental di ekosistem startup cenderung bersifat reaktif (dilakukan setelah burnout parah terjadi) daripada preventif.
 
 ---
 
