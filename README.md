@@ -202,21 +202,34 @@ Peta hubungan (heatmap) mengungkapkan beberapa korelasi penting:
 
 ---
 
-## 💡 Insight yang Diperoleh
+## 📌 Kesimpulan dan Saran
 
-Berdasarkan analisis data visual di atas, diperoleh beberapa poin pembelajaran utama:
+### 4.1 Kesimpulan Hasil Analisis
+Berdasarkan hasil visualisasi dan analisis data dari 50.000 pendiri startup, diperoleh beberapa poin kesimpulan sebagai berikut:
+1. **Gambaran Umum**: Rata-rata skor kejenuhan pendiri startup berada pada angka **3,44 dari skala 10** (kategori rendah ke sedang). Namun, terdapat **10,4% pendiri** yang mengalami kejenuhan tingkat kritis (burnout parah). Secara kesehatan fisik, pendiri startup kekurangan tidur dengan rata-rata hanya **5,69 jam per hari**.
+2. **Profil Kepribadian**: Tingkat stres dan kejenuhan sangat dipengaruhi oleh karakter kerja pendiri. Tipe *Burned-Out Operator* dan *Solo Hustler* memiliki tingkat kejenuhan rata-rata tertinggi (masing-masing skor 5,00 dan 4,38), sementara tipe *Calm Operator* memiliki ketahanan mental terbaik dengan skor kejenuhan terendah (1,38).
+3. **Efektivitas Dukungan**: Layanan kesehatan mental di ekosistem startup saat ini masih bersifat reaktif. Hal ini terlihat dari proporsi kejenuhan tinggi yang justru lebih besar pada pendiri yang mencari bantuan (18,9%) dibandingkan yang tidak mencari bantuan (7,7%), mengindikasikan mereka baru berkonsultasi ketika kondisi stres sudah parah.
+4. **Risiko Sektor dan Pendanaan**: Sektor industri *ClimateTech* mencatat risiko kegagalan usaha (shutdown) rata-rata tertinggi (0,396), sedangkan sektor *AI* memiliki risiko terendah (0,377). Meskipun demikian, ketersediaan pendanaan yang lebih besar terbukti secara konsisten mengurangi kemungkinan kegagalan startup di seluruh sektor industri.
+5. **Kaitan Jam Kerja**: Jam kerja yang ekstrem merupakan pemicu langsung terhadap peningkatan kejenuhan pendiri startup, dengan korelasi positif yang kuat antara durasi jam kerja mingguan dengan skor burnout.
 
-1. **Alur Terjadinya Kejenuhan (Burnout)**:
-   Kejenuhan pada pendiri startup terjadi melalui rantai kondisi yang saling memengaruhi:
-   **Jam Kerja Berlebihan (≥60 jam/minggu)** $\rightarrow$ **Stres Meningkat** $\rightarrow$ **Kelelahan Mengambil Keputusan** $\rightarrow$ **Keseimbangan Hidup Terganggu** $\rightarrow$ **Kejenuhan Tinggi (Burnout)**
-2. **Kunci Pencegahan Utama**:
-   Keseimbangan hidup adalah pelindung terkuat bagi kesehatan mental pendiri startup. Upaya kecil seperti menjaga waktu tidur yang cukup dan mengatur batas jam kerja terbukti sangat efektif menekan risiko kejenuhan.
-3. **Pemberian Dukungan Berdasarkan Karakter**:
-   Pendiri dengan karakteristik *Burned-Out Operator* dan *Solo Hustler* membutuhkan perhatian kesehatan mental lebih awal dibandingkan pendiri dengan tipe kepribadian lainnya.
-4. **Modal Menurunkan Risiko Kegagalan**:
-   Meskipun tidak mengurangi stres kerja secara langsung, ketersediaan pendanaan yang lebih tinggi membantu menjaga startup agar tidak mudah mengalami kegagalan usaha di seluruh jenis industri.
-5. **Pola Penanganan yang Masih Reaktif**:
-   Data menunjukkan kecenderungan bahwa pendiri startup baru mencari bantuan profesional kesehatan mental saat kondisi stres dan kejenuhannya sudah parah, sehingga diperlukan kampanye pencegahan dini sejak tahap awal startup didirikan.
+### 4.2 Insight Utama
+Dari kesimpulan hasil analisis di atas, diperoleh pemahaman mendalam (insight utama) mengenai ekosistem startup:
+1. **Rantai Penyebab Kejenuhan**: Kejenuhan tinggi tidak terjadi secara tiba-tiba, melainkan melalui rantai kondisi kerja: 
+   **Jam Kerja Berlebihan (≥60 jam/minggu)** $\rightarrow$ **Stres Meningkat** $\rightarrow$ **Kelelahan Mengambil Keputusan** $\rightarrow$ **Keseimbangan Hidup Terganggu** $\rightarrow$ **Kejenuhan Tinggi (Burnout)**.
+2. **Keseimbangan Hidup sebagai Pelindung**: Keseimbangan hidup (work-life balance) memiliki kaitan terkuat sebagai faktor penekan kejenuhan. Upaya pencegahan stres paling efektif adalah dengan membatasi jam kerja berlebih dan menjaga pola istirahat yang cukup.
+3. **Pendanaan sebagai Penopang Bisnis**: Tingkat pendanaan yang lebih tinggi membantu menjaga keberlangsungan operasional startup (mengurangi risiko gagal), tetapi tidak secara langsung meredakan beban stres psikologis yang ditanggung oleh pendiri.
+4. **Kecenderungan Penanganan Pasca-Kejadian**: Para pendiri cenderung mengabaikan kesehatan mental di tahap awal dan baru mencari pertolongan profesional setelah kondisi kesehatan mental mereka menurun drastis.
+
+### 4.3 Saran Pengembangan
+Sebagai langkah perbaikan untuk pengembangan ke depan, diajukan beberapa saran:
+1. **Pengembangan Sistem Dashboard Visualisasi**:
+   * **Simulasi Risiko Interaktif (Risk Calculator)**: Menambahkan fitur simulasi interaktif di mana pengguna dapat memasukkan durasi jam kerja, jam tidur, tingkat stres, dan tahap pendanaan mereka untuk memprediksi potensi kejenuhan dan risiko kegagalan startup secara langsung.
+   * **Analisis Geografis**: Menambahkan filter atau grafik sebaran peta wilayah untuk menganalisis apakah terdapat perbedaan pola kejenuhan dan risiko startup antar negara atau benua.
+   * **Penyaringan Lanjutan**: Memperluas penyaringan global agar pengguna dapat menyaring data berdasarkan skala startup (kecil, sedang, besar) secara bersamaan.
+2. **Bagi Praktisi, Pendiri, dan Ekosistem Startup**:
+   * **Langkah Preventif Dini**: Membangun program bimbingan kesehatan mental preventif di dalam wadah inkubator dan akselerator startup, agar pendiri dapat mengelola stres sebelum mencapai tingkat kritis.
+   * **Manajemen Stres Terintegrasi**: Bagi investor (Venture Capital), disarankan untuk tidak hanya memantau kinerja bisnis startup, tetapi juga memberikan fasilitas pelatihan manajemen waktu dan stres bagi para pendiri sebagai investasi jangka panjang.
+   * **Pembatasan Waktu Kerja Mandiri**: Mendorong pendiri startup, khususnya tipe *Solo Hustler*, untuk membagi beban tugas melalui perekrutan tim demi mengurangi kelelahan dalam mengambil keputusan operasional sendirian.
 
 ---
 
